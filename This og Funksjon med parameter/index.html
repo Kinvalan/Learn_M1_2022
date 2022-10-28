@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="cookie-div" class="pictureDiv" onclick="interactivePicture(this)"><img id="cookie" src="images/cookie.png"> 
+    </div>             
+
+
+    <script>
+        function interactivePicture(tag) { // The function understands that its using a parameter because we have a parameter (tag) and a ref. to the parameter in the onclick with (this).  
+            backpack += tag.innerHTML;
+            backPackContainerDiv.innerHTML = backpack; 
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>
