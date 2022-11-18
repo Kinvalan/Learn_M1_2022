@@ -1,0 +1,17 @@
+.bowserImg{
+    height: 300px;
+    width: 200px;
+    margin: 30px;
+}
+.playerImg{
+    height: 200px;
+    width: 150px;
+}
+.flex{
+    display: flex;
+    align-items: flex-start;
+}
+.btn {
+    width: 70px;
+    margin-left: 50px;
+}

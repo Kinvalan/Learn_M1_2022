@@ -1,0 +1,10 @@
+.btn {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    
+
+}

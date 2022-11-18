@@ -1,0 +1,27 @@
+Lage:
+
+
+- 1 knapp som endrer bakgrunnsfarge mellom rød, blå og gul tilfeldig
+
+
+- 1 knapp som viser enten bilde x, y eller z
+
+
+
+- Dette skal lages i MVC format
+
+
+----------------------------------------------------------------------------------------
+
+Hva vil vi skal skje?
+
+
+- når man trykker på random color så blir fargen på knappen til gul, rød eller blå
+
+
+
+- når man trykker på random picture så kommer det opp et bilde, enten 1, 2 eller 3
+
+
+
+

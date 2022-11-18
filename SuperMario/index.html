@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+
+            <div id = 'app'></div>
+
+        
+        <script>
+
+            // Model
+
+            let bowserHp = 300;
+            let charHp = 0;
+            let player = 'mario';
+
+
+
+            // View
+
+            updateView()
+
+            function updateView() {
+                let HTML = /*HTML*/ ` 
+
+
+                <div>
+                    <div class = "flex">Select character</div>
+                        <img src="pictures/mario.png" class= "smallImg" onclick="selectPlayer(' Mario')"/>
+                        <img src="pictures/luigi.png" class= "smallImg" onclick="selectPlayer(' Luigi')"/>
+                        <img src="pictures/yoshi.png" class= "smallImg" onclick="selectPlayer(' Yoshi)"/>
+                </div>
+
+                
+                <div class="flex"> 
+                    <button class="btn" id="bowser" onclick="attackOpponent(this)">Attack enemy!</button>
+                    <img src="pictures/bowser.png" class="Img">
+                    <div id="bowserHp">100 HP</div>
+                    <button class="btn" id="char" onclick="attackOpponent(this)">Attack Bowser!</button>
+                    <img src="pictures/bowsershroom.png" class="Img">
+                </div>
+
+                <div>    
+                    <div class="flex">
+                        <div id="charHp">200 HP</div>
+                        <img id="selectedChar" src="pictures/mario.png" class="Img"/>
+                        <img src="pictures/mushroom.png" class="Img">
+                        
+                </div>
+                
+                ` ;
+                document.getElementById("app").innerHTML = HTML;
+            }
+
+
+            // Controller 
+
+            // UpdateView() kalles på på slutten av hver funksjon for å tegne opp det vi ser på nytt
+
+
+
+            // Generell angreps-funksjon
+
+            function attackOpponent(element){                 
+                if(element.id === 'char'){
+                charAttacks();
+            }
+                else{
+            bowserAttacks(player);
+                }
+                updateView()
+            }
+
+            // Funksjon for når spilleren angriper Bowser
+            
+            function charAttacks(){
+                bowserHp -= 10;
+                document.getElementById("bowserHp").innerHTML = bowserHp + ' HP'
+                updateView()
+            }
+
+
+            function bowserAttacks(playerName){
+                charHp -= 20;
+                document.getElementById("charHp").innerHTML = charHp + ' HP'
+                updateView()
+            }
+
+
+              // Funksjon for å velge spiller
+
+            function selectPlayer(playerName){
+                document.getElementById('bowser').innerHTML = "Attack" + playerName;
+                document.getElementById('selectedChar').src = playerName +'.png'; 
+                player = playerName;
+                regenLife();
+                updateView()
+            }
+            
+
+            // Funksjon for å regenerere helsa til spilleren
+
+            function regenLife(){
+                if(player === 'mario'){
+                charHp = 200;
+                }
+
+                else if(player === 'luigi'){
+                    charHp = 140;
+                }
+                
+                else if(player === 'yoshi'){
+                    charHp = 80;
+                }
+              
+
+                document.getElementById("charHp").innerHTML = charHp + ' HP'
+
+                updateView()
+            }
+
+
+            // Funksjon for å regenerere helsa til Bowser
+
+            function regenBowser(){
+                bowserHp = 300;
+                document.getElementById("bowserHp").innerHTML = bowserHp + ' HP'
+                updateView()
+            }
+
+
+        </script>
+
+
+
+    </body>
+</html>
+
+
+
