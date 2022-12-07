@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    
+    <script>
+
+        /*
+        Oppgave:
+        let numbers = [1, 3, 10, 17, 53, 96];
+        function sumNumbersAbove20(numbers) {
+        }
+        klarer du å summere alle tallene som er over 20?
+        */
+
+        // Må vi bruke .filter() metoden for arrayet vårt her?
+
+
+        let numbers = [1, 3, 10, 17, 53, 96];
+        
+
+        /*
+         - Lambda funksjon. (Forkorta funksjon) den passer bra med .reduce og .filter metodene. 
+         - De metodene er funksjoner som tar funksjoner som parameter. 
+
+         Filter:
+         - Filter vet at den skal få en funksjon som har et parameter, og at den skal returnere en boolsk variabel. 
+         - De elem. i arryayen som tilfredsstiller det boolske uttrykket de legges til i et nytt array. 
+         - Det nye arrayet (numbersOver20) returneres av filter funksjonen.
+
+         Reduce:
+         - Reduserer et array til 1 verdi. Kan være et gjennomsnitt eller en sum feks.
+         - Tar to parametere. Det første parameteret er en funksjon som kan være et lambda uttrykk. Det andre er startverdi, som regel 0.
+         - Funksjonen (som er det første parameteret) skal ha to parametere.
+         - Det første av disse to parameterne er den aggregerte (redusere mange tall til 1 verdi) verdien.
+         - 
+
+         */
+
+        // sumNumbersAbove20(numbers);
+        function sumNumbersAbove20(numbers) {
+            let numbersOver20 = numbers.filter(tall => tall > 20);
+            console.log(numbersOver20);
+            return numbersOver20.reduce((sum, tall) => tall + sum, 0);
+        }
+
+        // Man kan skrive: sumNumbersAbove20(numbers) i konsollen for å se 53 og 96 plussa sammen. 
+
+
+
+        //---------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        // Alternativ måte:
+
+        /*
+        - Konsoll-logger funksjonen "sumNumberAbove20AltMet(numbers)"
+            - Ved hjelp av for løkka under vil vi da få vite hva alle tall over 20 i arrayet plussa sammen blir summert.
+
+        - Vi lager funksjonen "sumNumberAbove20AltMet(numbers)" 
+            - Vi deklarerer en variablel med navn sum og verdi 0.
+            - Vi lager så en for of løkke.
+            
+             - Number er hvert enkelt element i arrayet og numbers er navnet på hele arrayet.
+                 - Derfor skriver vi number of numbers.
+            - Dersom den enkelte verdien (number) er større enn 20, så legges number til i sum. 
+        
+        - Vi returnerer så sum etter at verdiene er lagt sammen for å se hvordan sum ser ut nå. 
+
+        // Hvis du bare skal ha verdien i arrayet er for of fint å bruke, trenger du index nr. burde man sette opp for løkka på vanlig måte. 
+
+        */ 
+
+    
+        console.log(sumNumbersAbove20AltMet(numbers));
+
+        function sumNumbersAbove20AltMet(numbers) {
+            let sum = 0;
+            for(number of numbers){
+                if(number > 20){
+                    sum += number;
+                }
+            }
+            return sum;
+        }
+
+
+   
+
+    </script>
+
+
+
+</body>
+
+</html>

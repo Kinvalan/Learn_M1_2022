@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app"></div>
+
+    <script>
+
+
+        /*
+         Oppgave: 
+
+        Lag et program som kan ta inn input fra bruker, Du skal også ha tre knapper:
+
+        - en knapp som printer ut hvor mange bokstaver som finnes i teksten
+
+        - en knapp som teller antall vokaler 
+
+        - en knapp som kan fjerne alle vokalene fra teksten 
+        */
+
+
+        // Model
+
+        let text = "";
+        let vocals = ["A", "E", "I", "O", "U", "Y", "Æ", "Ø", "Å"];
+        let numberOfLetters = 0;
+        let numberOfVocals = 0;
+       
+
+
+
+
+
+
+        // View
+
+
+        updateView()
+        function updateView() {
+            let html = /*HTML*/ `
+            <input type = "text" onchange = "setText(this.value)">
+
+            <button onclick="updateNumberOfLetters()">Vis antall bokstaver i teksten</button>
+            <button onclick="updateNumberOfVocals()">Vis antall vokaler i teksten</button>
+            <button onclick="removeVocals()">Fjern alle vokaler fra teksten</button>
+
+            <div>Tekst:${text}</div>
+            <div>Antall vokaler: ${numberOfVocals}</div>
+            <div>Antall bokstaver: ${numberOfLetters}</div>
+            `;
+
+            document.getElementById('app').innerHTML = html;
+        }
+
+
+
+        // Controller
+
+
+        function setText(inputValue) {
+            text = String(inputValue);
+            updateView();
+        }
+
+
+
+
+        function updateNumberOfLetters() {
+            numberOfLetters = text.length;
+            updateView();
+        }
+
+
+
+
+        function updateNumberOfVocals() {
+            // "numberOfVocals = 0;" Passer på at vi starter på 0 mtp. antall vokaler.
+
+            numberOfVocals = 0;
+
+            // for(vocal of vocals){
+            //     for(){
+            //         if(){
+
+            //         }
+            //     }
+            // }
+
+            updateView();
+        }
+
+
+
+
+        function removeVocals() {
+
+            updateView();
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,7 @@
+Oppgave: 
+
+Skriv om denne: koden på nytt (ikke samme som eksempelet over). Gjør koden enklere ved å kun bruke én funksjon og la denne bruke en parameter. 
+
+
+Finn på noe annet å lage ved hjelp av det du har lært til nå.
+

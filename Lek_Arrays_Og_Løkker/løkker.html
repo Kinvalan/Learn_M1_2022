@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="app"></div>
+
+<script>
+
+
+/*
+Løkker
+    For loop reversert - funksjon
+     - Feks printe tekst baklengs 
+*/
+
+
+
+
+// Model
+
+let text;
+
+
+
+
+
+// View
+
+updateView()
+        function updateView() {
+            html = /*HTML*/ `
+                <button onclick = "reverseText()">Reverse the text</button>
+                <input type = "text" onchange = "setText(this.value)">
+                <div>${text}</div>
+                `;
+            document.getElementById('app').innerHTML = html;
+        }
+
+
+
+
+// Controller
+
+
+
+
+function setText(inputText){
+    text = String(inputText);
+    updateView();
+}
+
+
+/* 
+Funksjonen "reverseText()"" er funksjon som tar input fra brukeren og reverserer teksten ved hjelp av en for-løkke.
+
+- Variablen reversedText settes lik en tom string.
+
+- Vi lager en for-løkke.
+ - Vi definerer variablen "i"
+  - "i" har en start verdi som er variablen "text" sin lengde minus 1.
+  - Denne for-løkka kjører så lenge "i" er større eller lik 0.
+  - Løkka minsker med 1 per runde. 
+
+
+charAt()-metoden returnerer tegnet ved en spesifisert indeks (posisjon) i en string.
+ - Indeksen til det første tegnet er 0, det andre er 1, osv.
+ - Siden vi bruker charAt(i), så vil tegnet som blir returnert være: variablen "i" sitt tegn der "i" er.
+
+
+- reversedText variablen blir så plusset på i "text" sin charAt(i).
+
+- Til slutt settes "text" til å være "reversedText".
+*/
+
+
+function reverseText(){
+    let reversedText = "";
+
+    for(let i = (text.length - 1); i >= 0; i--){
+        reversedText += text.charAt(i);
+    }
+        text = reversedText;
+
+    updateView();
+}
+
+
+
+
+
+
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gangetabell</title>
+</head>
+<body>
+    <input onchange = "userChangedSlider(this.value)" type="range" min="1" max="100" value="5"/>
+    <div id="multiplicationMatrix"></div>
+
+    <script>
+
+        /*
+Oppg:
+På siden er det en slider som velger et tall mellom 1 og 100 - og med det hvilken gangetabell som ønskes. 
+(Velger man for eksempel 10, betyr det at brukeren ønsker gangetabellen opp til 10⋅10.) 
+
+Lag en controller-funksjon som kalles hver gang brukeren endrer slideren. 
+Funksjonen skal regne ut alle tallene i multiplicationMatrix på nytt ut fra hvor stor gangetabell som ønskes, og også sette columnCount 
+- og så kalle show() på nytt.
+
+Hint: Hvert tall i gangetabellen er et tall ganget med et annet, altså tall1⋅tall2. For å få til dette trenger du to for-løkker inne i hverandre, 
+hvor den ene teller fra 1 til valgt størrelse for tall1 og den andre gjør det samme for tall2.
+        */
+
+
+
+        // hjelpevariabler for view og controller
+        let multiplicationMatrixDiv = document.getElementById('multiplicationMatrix');
+
+        // Model
+        let columnCount = 6;
+        let multiplicationMatrix = [
+            1, 2, 3, 4, 5, 6,
+            2, 4, 6, 8, 10, 12,
+            3, 6, 9, 12, 15, 18,
+            4, 8, 12, 16, 20, 24,
+            5, 10, 15, 20, 25, 30,
+            6, 12, 18, 24, 30, 36
+        ];
+
+        // View
+
+        show();
+        function show() {
+            let html = '';
+            for (let i = 0; i < multiplicationMatrix.length; i++) {
+                let number = multiplicationMatrix[i];
+                html += `<div>${number}</div>`;
+            }
+            multiplicationMatrixDiv.innerHTML = html;
+            multiplicationMatrixDiv.style.display = 'grid';
+            multiplicationMatrixDiv.style.gridTemplateColumns = `repeat(${columnCount},40px)`;
+        }
+
+        // Controller
+
+    
+
+        function userChangedSlider(inputValue){
+            multiplicationMatrix = [];
+
+
+            /* 
+            Ytterste løkke:
+
+            Ytterste for-løkka har variabelen tallX med startverdi = 1. 
+            Den ytterste løkka blir kjørt så lenge tallX er mindre eller lik inputValue/columnCount.
+            Løkka øker med 1 per runde. 
+
+            Innerste løkke:
+
+            Innerste for-løkka har variabelen tallY med startverdi = 1. 
+            Den innerste løkka blir kjørt så lenge tallX er mindre eller lik inputValue/columnCount.
+            Løkka øker med 1 per runde. 
+
+            Så pusher vi tallX ganger tallY inn i multiplicationMatrix arrayet.
+            */
+
+            for(let tallX = 1; tallX <= inputValue; tallX++){
+                for(let tallY = 1; tallY <= inputValue; tallY++){
+                    multiplicationMatrix.push(tallX * tallY);
+                }
+            }
+            columnCount = inputValue;
+            show();
+        }
+
+
+
+
+
+    </script>
+</body>
+</html>

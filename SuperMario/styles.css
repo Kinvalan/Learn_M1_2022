@@ -1,17 +1,32 @@
-.bowserImg{
-    height: 300px;
-    width: 200px;
+
+.Img{
+    height: 400px;
+    width: 300px;
     margin: 30px;
+
 }
-.playerImg{
+.smallImg{
     height: 200px;
     width: 150px;
+    
 }
 .flex{
     display: flex;
     align-items: flex-start;
+    font-size: 35px;
+    
 }
+
 .btn {
-    width: 70px;
-    margin-left: 50px;
+    height: 80px;
+    width: 200px;
+    margin-left: 80px;
+    font-size: 25px;
 }
+
+
+#charachtersDiv {
+    padding-bottom: 250px;
+    
+}
+

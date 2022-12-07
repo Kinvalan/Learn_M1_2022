@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lek_Arrays_Og_Løkker</title>
+
+</head>
+
+<body>
+
+    <div id="app"></div>
+
+    <script>
+
+        /*
+        Arrays
+        Lag et array med verdiene 1 til 10 X
+            - legg til ting i arrayet eks .push X
+            - se på andre metoder eks .pop osv.  X
+
+            - klare å hente index-verdier. 
+            
+            eks:
+            
+            let dogs = ["Bulldog" , "Beagle",  "Labrador"];
+                alert(dogs[1]);   // henter verdi på index, første gjenstand er [0]
+        */
+
+
+        // Model
+
+        let myArray = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
+        let dogs = ["Bulldog" , "Beagle",  "Labrador"];
+                
+
+
+
+
+
+
+        // View
+
+        updateView()
+        function updateView() {
+            html = /*HTML*/ `
+                '${myArray}';
+                <button onclick = "arrayPush()">Legg til 11 og 12 i arrayet</button>
+                <button onclick = "arrayPop()">Fjern det siste elementet fra arrayet</button>
+                <button onclick = "doggy()">Se indeks 1 i dogs arrayet</button>
+                `;
+            document.getElementById('app').innerHTML = html;
+        }
+
+
+
+        // Controller
+
+
+        /* 
+        Funksjonen arrayPush() legger til 11 og 12 i slutten av arrayet "myArray".
+        Så ser koden i dokumentet etter et element med id 'app' og plusser på verdien av myArray variablen.
+        */
+
+        function arrayPush() {
+            myArray.push("11", "12")
+            document.getElementById('app').innerHTML += (`${myArray}`);
+            updateView();
+
+        }
+
+         /* 
+        Funksjonen arrayPop() fjerner det siste elementet i slutten av arrayet "myArray".
+        Så ser koden i dokumentet etter et element med id 'app' og plusser på verdien av myArray variablen.
+        */
+
+        function arrayPop(){
+            myArray.pop ("12")
+            document.getElementById('app').innerHTML += (`${myArray}`);
+            updateView();
+        }
+
+
+
+        /* 
+        Funksjonen doggy() henter ut indeks 1 i arrayet dogs. 
+        Det er beagle, så da vil man se beagle på skjermen når man klikker på kanppen med onclick for denne funksjonen. 
+        */
+
+        function doggy(){
+            // henter verdi på index, første gjenstand er [0]
+            document.getElementById('app').innerHTML += (`${dogs[1]}`);
+        }
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>
