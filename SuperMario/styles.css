@@ -30,3 +30,22 @@
     
 }
 
+#charachterNames {
+    font-size: 35px;
+    display: flex;
+}
+
+#nameMario{
+    padding-right: 80px;
+    padding-left: 30px
+}
+
+#nameLuigi{
+    padding-right: 80px;
+}
+
+#nameMYoshi{
+    padding-right: 20px;
+}
+
+

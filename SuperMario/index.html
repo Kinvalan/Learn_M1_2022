@@ -34,10 +34,16 @@
 
 
                 <div id="charachtersDiv">
-                    <div class = "flex">First, select your character</div>
-                        <img src="pictures/mario.png" class= "smallImg" onclick="selectPlayer('mario')"/>
-                        <img src="pictures/luigi1.png" class= "smallImg" onclick="selectPlayer('luigi1')"/>
-                        <img src="pictures/yoshi.png" class= "smallImg" onclick="selectPlayer('yoshi)"/>
+                    <div class = "flex">First, select your character:</div>
+                        <img  src="pictures/mario.png" class= "smallImg" onclick="selectPlayer('mario')"/>
+                        <img  src="pictures/luigi.png" class= "smallImg" onclick="selectPlayer('luigi')"/>
+                        <img  src="pictures/yoshi.png" class= "smallImg" onclick="selectPlayer('yoshi')"/>
+
+                        <div id="charachterNames">
+                            <div id ="nameMario">Mario</div>
+                            <div id ="nameLuigi">Luigi</div>
+                            <div id ="nameYoshi">Yoshi</div>
+                        </div>
                 </div>
 
                 
@@ -54,7 +60,7 @@
                     <img src="pictures/bowser.png" class="Img">
                     <div id="bowserHp">${bowserHp} HP</div>
                     <button class="btn" id="bowser" onclick="attackOpponent(this)">Attack enemy!</button>
-                    <img src="pictures/bowsershroom.png" class="Img" onclick="regenBowser()"/>
+                    <img src="pictures/bowsershroom.png" class="Img" onclick="regenBowser()"/>  
                 </div>
                 
                 ` ;
@@ -96,7 +102,7 @@
 
 
               // Funksjon for å velge spiller
-
+        
             function selectPlayer(playerName){
                 document.getElementById('bowser').innerHTML = "Attack" + playerName;
                 document.getElementById('selectedChar').src = playerName +'.png'; 
@@ -143,8 +149,6 @@
                 Feilsøk:
 
                 select charachter:
-
-                - på yoshi mtp å hente hp verdi
 
                 - hente bildet til luigi og yoshi funker ikke 
             */                
